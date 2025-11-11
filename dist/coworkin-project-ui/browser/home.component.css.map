@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/features/auth/pages/home/home.component.scss"],
+  "sourcesContent": [":host {\n  display: block;\n  font-family: 'Poppins', sans-serif;\n  background-color: #f9f9f9;\n  color: #222;\n}\n\nmat-icon {\n  font-size: 2.4rem;\n  color: #333;\n}\n\nbutton {\n  font-family: inherit;\n  letter-spacing: 0.5px;\n}\n\nh1 {\n  text-align: center;\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,eAAA,SAAA,EAAA;AACA,oBAAA;AACA,SAAA;;AAGF;AACE,aAAA;AACA,SAAA;;AAGF;AACE,eAAA;AACA,kBAAA;;AAGF;AACE,cAAA;;",
+  "names": []
+}
