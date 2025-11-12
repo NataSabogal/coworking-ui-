@@ -1,0 +1,64 @@
+<div class="register-wrapper">
+  <div class="register-container">
+    <h1 class="register-title">REGISTRO DE USUARIO</h1>
+
+    <div class="register-box">
+      <div class="datos-label">DATOS :</div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="submit()" class="register-form">
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Nombre :</label>
+            <input formControlName="nombre" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Apellido :</label>
+            <input formControlName="apellido" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Teléfono :</label>
+            <input formControlName="telefono" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Correo :</label>
+            <input formControlName="correo" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Contraseña :</label>
+            <input type="password" formControlName="contrasena" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Confirmar Contraseña :</label>
+            <input type="password" formControlName="confirmarContrasena" class="field-input" />
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="register-btn" class ="reservaForm.invalid">
+            REGISTRARSE
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Home button - bottom left -->
+    <button class="home-button" (click)="volverHome()">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</div>

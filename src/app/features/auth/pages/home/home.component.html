@@ -1,0 +1,47 @@
+<div class="home-wrapper">
+  <div class="home-container">
+    <!-- Header -->
+    <header class="home-header">
+      <!-- Left: Icon (button to register) + Button (to login) -->
+      <div class="left-section">
+        <button class="icon-button" disabled title="Próximamente">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <button
+          mat-raised-button
+          class="header-button"
+          routerLink="login"
+        >
+          Inicio Sesión
+        </button>
+      </div>
+
+      <!-- Center: Title -->
+      <h1 class="title">Coworking</h1>
+
+      <!-- Right: Empty space for symmetry -->
+      <div class="right-section"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="image-container">
+        <img
+          src="assets/images/coworking.jpg"
+          alt="Coworking"
+          class="coworking-image"
+        />
+      </div>
+
+      <!-- Bottom Right Button -->
+      <button
+        mat-raised-button
+        class="reserve-button"
+        disabled
+        title="Próximamente"
+      >
+        Reservar Ahora
+      </button>
+    </main>
+  </div>
+</div>

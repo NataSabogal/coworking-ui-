@@ -1,0 +1,20 @@
+<div class="flex flex-col h-screen bg-white">
+  <header class="bg-gray-800 text-white p-4">
+    <h1>Iniciar sesion</h1>
+  </header>
+
+  <main class="flex-grow flex items-center justify-center p-4">
+    <router-outlet></router-outlet> 
+  </main>
+
+  <footer class="absolute bottom-4 left-4">
+    <button 
+      mat-icon-button 
+      routerLink="/" 
+      aria-label="Ir a inicio"
+      class="text-black hover:text-gray-700"
+    >
+      <mat-icon>home</mat-icon>
+    </button>
+  </footer>
+</div>
