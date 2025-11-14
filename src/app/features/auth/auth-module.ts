@@ -10,7 +10,7 @@ import { ResetPassword } from './pages/reset-password/reset-password';
 import { Home } from './pages/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AccountComponent } from './pages/account/account.component';
-import { Booking } from './pages/booking/booking';
+import { BookingComponent } from './pages/booking/booking.component';
 
 
 
@@ -20,10 +20,10 @@ import { Booking } from './pages/booking/booking';
     LoginComponent,
     RegistrarComponent,
     AccountComponent,
+    BookingComponent, 
     ForgotPassword,
     ResetPassword,
     Home,
-    Booking,
     
   ],
   imports: [

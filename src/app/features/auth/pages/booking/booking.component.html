@@ -1,0 +1,83 @@
+<div class="booking-wrapper">
+  <div class="booking-container">
+    <h1 class="booking-title">RESERVAS</h1>
+
+    <div class="booking-box">
+      <div class="booking-content">
+        <!-- Left Section: Form -->
+        <div class="form-section">
+          <div class="datos-label">DATOS :</div>
+
+          <form [formGroup]="bookingForm" class="booking-form">
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">FECHA INICIO :</label>
+                <input type="date" formControlName="fechaInicio" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">HORA INICIO :</label>
+                <input type="time" formControlName="horaInicio" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">FECHA FIN :</label>
+                <input type="date" formControlName="fechaFin" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">HORA FIN:</label>
+                <input type="time" formControlName="horaFin" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">ESTADO:</label>
+                <input formControlName="estado" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">ID RECURSO:</label>
+                <input formControlName="idRecurso" class="field-input" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label">USUARIO RESERVA:</label>
+                <input formControlName="usuarioReserva" class="field-input" />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right Section: Button -->
+        <div class="button-section">
+          <button type="button" class="catalog-btn" (click)="verCatalogoRecursos()">
+            CATALOGOO DE<br>RECURSOS
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom Section: Buttons -->
+      <div class="bottom-section">
+        <button class="home-button" (click)="volverHome()">
+          <mat-icon>home</mat-icon>
+        </button>
+
+        <button type="button" class="payment-btn" (click)="pagoYFacturacion()">
+          PAGO Y FACTURACION
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

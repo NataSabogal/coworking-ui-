@@ -13,4 +13,8 @@ export class Home {
   goToAccount(): void {
     this.router.navigate(['/account']);
   }
+
+  goToBooking(): void {  
+    this.router.navigate(['/booking']);
+  }
 }
