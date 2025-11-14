@@ -1,0 +1,67 @@
+<div class="account-wrapper">
+  <div class="account-container">
+    <h1 class="account-title">Mi Cuenta</h1>
+
+    <div class="account-box">
+      <div class="datos-label">DATOS :</div>
+
+      <form [formGroup]="accountForm" class="account-form">
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Cedula :</label>
+            <input formControlName="cedula" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Nombre Completo :</label>
+            <input formControlName="nombre" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Email :</label>
+            <input formControlName="email" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Telefono :</label>
+            <input formControlName="telefono" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Direccion :</label>
+            <input formControlName="direccion" class="field-input" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">Password :</label>
+            <input type="password" formControlName="password" class="field-input" />
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="button" class="action-btn" (click)="verHistorialReservas()">
+            HISTORIAL DE RESERVAS
+          </button>
+
+          <button type="button" class="action-btn" (click)="verNotificaciones()">
+            NOTIFICACIONES
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <button class="home-button" (click)="volverHome()">
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+</div>

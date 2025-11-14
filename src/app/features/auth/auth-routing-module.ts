@@ -5,11 +5,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForgotPassword } from './pages/forgot-password/forgot-password';
 import { ResetPassword } from './pages/reset-password/reset-password';
 import { RegistrarComponent } from './pages/register/register.component';
+import { AccountComponent } from './pages/account/account.component';
+
 const routes: Routes = [
- 
-  { path: '', component: Home },                 
-  { path: 'login', component: LoginComponent },  
-  { path: 'register', component: RegistrarComponent },     
+
+  { path: '', component: Home },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrarComponent },
+  { path: 'account', component: AccountComponent },
   { path: 'forgot-password', component: ForgotPassword },
   { path: 'reset-password', component: ResetPassword },
 ];
@@ -18,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule { }

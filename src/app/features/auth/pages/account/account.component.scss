@@ -1,0 +1,155 @@
+.account-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+.account-container {
+  width: 100%;
+  max-width: 520px;
+  position: relative;
+}
+
+.account-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.account-box {
+  background-color: #a8cfbf;
+  border: 3px solid #5dbfb3;
+  padding: 2.5rem 2.5rem 2rem;
+}
+
+.datos-label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-label {
+  font-size: 0.95rem;
+  color: #000;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.field-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #000;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  outline: none;
+  color: #000;
+}
+
+.field-input:focus {
+  border-bottom-color: #000;
+}
+
+.field-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.action-btn {
+  background-color: #5dbfb3;
+  color: #000;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.action-btn:hover {
+  background-color: #4da89d;
+  transform: translateY(-1px);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.home-button {
+  position: absolute;
+  bottom: -4rem;
+  left: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  
+  mat-icon {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    color: #000;
+  }
+}
+
+.home-button:hover mat-icon {
+  color: #333;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .account-wrapper {
+    padding: 1rem;
+  }
+
+  .account-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .account-title {
+    font-size: 1.1rem;
+  }
+
+  .action-btn {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+  }
+}

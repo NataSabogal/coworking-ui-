@@ -2,16 +2,12 @@
   <div class="home-container">
     <!-- Header -->
     <header class="home-header">
-      <!-- Left: Icon (button to register) + Button (to login) -->
+
       <div class="left-section">
-        <button class="icon-button" disabled title="Próximamente">
+        <button class="icon-button" (click)="goToAccount()" title="Mi Cuenta">
           <mat-icon>account_circle</mat-icon>
         </button>
-        <button
-          mat-raised-button
-          class="header-button"
-          routerLink="login"
-        >
+        <button mat-raised-button class="header-button" routerLink="login">
           Inicio Sesión
         </button>
       </div>
@@ -26,20 +22,11 @@
     <!-- Main Content -->
     <main class="main-content">
       <div class="image-container">
-        <img
-          src="assets/images/coworking.jpg"
-          alt="Coworking"
-          class="coworking-image"
-        />
+        <img src="assets/images/coworking.jpg" alt="Coworking" class="coworking-image" />
       </div>
 
       <!-- Bottom Right Button -->
-      <button
-        mat-raised-button
-        class="reserve-button"
-        disabled
-        title="Próximamente"
-      >
+      <button mat-raised-button class="reserve-button" disabled title="Próximamente">
         Reservar Ahora
       </button>
     </main>

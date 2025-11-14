@@ -9,6 +9,9 @@ import { ForgotPassword } from './pages/forgot-password/forgot-password';
 import { ResetPassword } from './pages/reset-password/reset-password';
 import { Home } from './pages/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
+import { AccountComponent } from './pages/account/account.component';
+import { Booking } from './pages/booking/booking';
+
 
 
 
@@ -16,9 +19,11 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     LoginComponent,
     RegistrarComponent,
+    AccountComponent,
     ForgotPassword,
     ResetPassword,
-    Home, 
+    Home,
+    Booking,
     
   ],
   imports: [
