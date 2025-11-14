@@ -1,4 +1,4 @@
- import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -13,24 +13,17 @@ export class RegistrarComponent {
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
+      cedula: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
-      apellido: ['', [Validators.required]],
-      telefono: ['', [Validators.required]],
       correo: ['', [Validators.required, Validators.email]],
-      contrasena: ['', [Validators.required, Validators.minLength(6)]],
-      confirmarContrasena: ['', [Validators.required]]
+      telefono: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      contrasena: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   submit() {
     if (this.registerForm.valid) {
-      const { contrasena, confirmarContrasena } = this.registerForm.value;
-      
-      if (contrasena !== confirmarContrasena) {
-        alert('Las contraseñas no coinciden');
-        return;
-      }
-
       console.log('Registro enviado', this.registerForm.value);
       this.router.navigate(['/login']);
     } else {

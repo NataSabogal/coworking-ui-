@@ -9,14 +9,14 @@
 
 .register-container {
   width: 100%;
-  max-width: 480px;
+  max-width: 520px;
   position: relative;
 }
 
 .register-title {
   text-align: center;
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: 500;
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -25,12 +25,13 @@
 
 .register-box {
   background-color: #a8cfbf;
-  padding: 2.5rem 2rem;
+  border: 3px solid #5dbfb3;
+  padding: 2.5rem 2.5rem;
 }
 
 .datos-label {
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
   margin-bottom: 1.5rem;
   color: #000;
   letter-spacing: 0.5px;
@@ -39,7 +40,7 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .form-row {
@@ -54,7 +55,7 @@
 }
 
 .field-label {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #000;
   font-weight: 400;
   letter-spacing: 0.3px;
@@ -64,8 +65,8 @@
   background: transparent;
   border: none;
   border-bottom: 2px solid #000;
-  padding: 0.5rem 0;
-  font-size: 1rem;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
   outline: none;
   color: #000;
 }
@@ -76,23 +77,26 @@
 
 .button-container {
   margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .register-btn {
-  background-color: #7de5db;
+  background-color: #5dbfb3;
   color: #000;
   border: none;
-  padding: 0.75rem 2rem;
-  font-size: 0.9rem;
-  font-weight: 400;
+  padding: 0.85rem 3rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .register-btn:hover:not(:disabled) {
-  background-color: #6dd4cb;
+  background-color: #4da89d;
+  transform: translateY(-1px);
 }
 
 .register-btn:disabled {
