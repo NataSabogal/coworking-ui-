@@ -8,6 +8,7 @@ import { RegistrarComponent } from './pages/register/register.component';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
+import { BillComponent } from './pages/bill/bill.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPassword },
   {path: 'booking', component: BookingComponent},
   { path: 'payments', component: PaymentsComponent },
+  { path: 'bill', component: BillComponent },
 ];
 
 @NgModule({

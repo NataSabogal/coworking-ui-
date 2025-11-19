@@ -1,0 +1,108 @@
+<div class="bill-wrapper">
+  <div class="bill-container">
+    <h1 class="bill-title">FACTURA</h1>
+    
+    <div class="bill-box">
+      <!-- Fecha de búsqueda -->
+      <div class="search-section">
+        <div class="field">
+          <label class="field-label">BUSCAR POR FECHA DE PAGO:</label>
+          <div class="search-input-group">
+            <input 
+              type="date" 
+              [(ngModel)]="fechaBusqueda" 
+              class="field-input" 
+              (change)="buscarPorFecha()"
+            />
+            <button type="button" class="search-btn" (click)="buscarPorFecha()">
+              <mat-icon>search</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div *ngIf="loading" class="loading-section">
+        <p>Cargando factura...</p>
+      </div>
+
+      <!-- Sin resultados -->
+      <div *ngIf="!loading && !pagoData" class="no-data-section">
+        <p>No se encontraron pagos para la fecha seleccionada</p>
+      </div>
+
+      <!-- Factura generada -->
+      <div *ngIf="!loading && pagoData" class="invoice-section">
+        <div class="invoice-header">
+          <div class="invoice-title-section">
+            <h2 class="invoice-text">INVOICE</h2>
+          </div>
+          <div class="company-section">
+            <p class="company-name">Coworking</p>
+          </div>
+        </div>
+
+        <div class="bill-to-section">
+          <p class="bill-to-label">BILL TO</p>
+          <div class="bill-to-info">
+            <p>ID Reserva: #{{ pagoData.idReserva }}</p>
+          </div>
+        </div>
+
+        <div class="invoice-table">
+          <div class="table-header">
+            <div class="table-col">DESCRIPTION</div>
+            <div class="table-col">QUANTITY</div>
+            <div class="table-col">UNIT PRICE</div>
+            <div class="table-col">AMOUNT</div>
+          </div>
+          <div class="table-row">
+            <div class="table-col">{{ pagoData.metodoPago }}</div>
+            <div class="table-col">1</div>
+            <div class="table-col">${{ pagoData.monto }}</div>
+            <div class="table-col">${{ pagoData.monto }}</div>
+          </div>
+        </div>
+
+        <div class="invoice-total">
+          <div class="total-row">
+            <span class="total-label">TOTAL</span>
+            <span class="total-amount">${{ pagoData.monto }}</span>
+          </div>
+        </div>
+
+        <div class="invoice-details">
+          <p><strong>ID Pago:</strong> {{ pagoData.idPago }}</p>
+          <p><strong>Fecha de Pago:</strong> {{ pagoData.fechaPago }}</p>
+          <p><strong>Método de Pago:</strong> {{ pagoData.metodoPago }}</p>
+        </div>
+      </div>
+
+      <!-- Bottom buttons -->
+      <div class="bottom-section">
+        <button class="back-button" (click)="volver()">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        
+        <div class="action-buttons">
+          <button 
+            type="button" 
+            class="action-btn print-btn" 
+            (click)="imprimirFactura()"
+            [disabled]="!pagoData"
+          >
+            IMPRIMIR
+          </button>
+          <button 
+            type="button" 
+            class="action-btn download-btn" 
+            (click)="descargarFactura()"
+            [disabled]="!pagoData"
+          >
+            DESCARGAR PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

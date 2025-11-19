@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router'; 
 import { AuthRoutingModule } from './auth-routing-module';
 import { LoginComponent } from './pages/login/login.component';
@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
-import { Bill } from './pages/bill/bill';
+import { BillComponent } from './pages/bill/bill.component';
 
 
 
@@ -27,12 +27,13 @@ import { Bill } from './pages/bill/bill';
     ResetPassword,
     Home,
     PaymentsComponent,
-    Bill,
+    BillComponent,
     
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     RouterModule,
     AuthRoutingModule,
     MatIconModule
