@@ -1,0 +1,112 @@
+<div class="resource-wrapper">
+  <div class="resource-container">
+    <h1 class="resource-title">CATALOGO DE RECURSOS</h1>
+    
+    <div class="resource-box">
+      <!-- Filtros -->
+      <div class="filter-section">
+        <div class="filter-group">
+          <label class="filter-label">FILTRAR POR TIPO:</label>
+          <select [(ngModel)]="filtroTipo" (change)="aplicarFiltros()" class="filter-select">
+            <option value="">TODOS</option>
+            <option value="NO_ESPECIFICADO">NO ESPECIFICADO</option>
+            <option value="OFICINA_PRIVADA">OFICINA PRIVADA</option>
+            <option value="ESCRITORIO_FIJO">ESCRITORIO FIJO</option>
+            <option value="SALA_REUNIONES">SALA DE REUNIONES</option>
+            <option value="AUDITORIO">AUDITORIO</option>
+            <option value="ZONA_COMUN">ZONA COMÚN</option>
+            <option value="RECURSO_TECNOLOGICO">RECURSO TECNOLÓGICO</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">BUSCAR:</label>
+          <input 
+            type="text" 
+            [(ngModel)]="busqueda" 
+            (input)="aplicarFiltros()" 
+            placeholder="Nombre o descripción..."
+            class="filter-input"
+          />
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div *ngIf="loading" class="loading-section">
+        <p>Cargando recursos...</p>
+      </div>
+
+      <!-- Grid de recursos -->
+      <div *ngIf="!loading && recursosFiltrados.length > 0" class="resources-grid">
+        <div 
+          *ngFor="let recurso of recursosFiltrados" 
+          class="resource-card"
+          [class.selected]="recursoSeleccionado?.idRecurso === recurso.idRecurso"
+          (click)="seleccionarRecurso(recurso)"
+        >
+          <div class="card-header">
+            <h3 class="card-title">{{ recurso.nombreRecurso }}</h3>
+            <span class="card-badge" [attr.data-tipo]="recurso.tipoRecurso">
+              {{ formatearTipo(recurso.tipoRecurso) }}
+            </span>
+          </div>
+          
+          <div class="card-body">
+            <p class="card-description">{{ recurso.descripcion }}</p>
+            
+            <div class="card-details">
+              <div class="detail-item">
+                <mat-icon class="detail-icon">schedule</mat-icon>
+                <span class="detail-text">${{ recurso.valorHora }}/hora</span>
+              </div>
+              
+              <div class="detail-item">
+                <mat-icon class="detail-icon">event</mat-icon>
+                <span class="detail-text">{{ recurso.fechaInicioTarifa }} - {{ recurso.fechaFinTarifa }}</span>
+              </div>
+              
+              <div class="detail-item">
+                <mat-icon class="detail-icon">info</mat-icon>
+                <span class="detail-text estado" [class.activo]="recurso.estado === 'activo'">
+                  {{ recurso.estado }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <button 
+              type="button" 
+              class="select-btn"
+              [class.selected]="recursoSeleccionado?.idRecurso === recurso.idRecurso"
+            >
+              {{ recursoSeleccionado?.idRecurso === recurso.idRecurso ? 'SELECCIONADO' : 'SELECCIONAR' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sin resultados -->
+      <div *ngIf="!loading && recursosFiltrados.length === 0" class="no-data-section">
+        <mat-icon class="no-data-icon">search_off</mat-icon>
+        <p>No se encontraron recursos con los filtros aplicados</p>
+      </div>
+
+      <!-- Bottom buttons -->
+      <div class="bottom-section">
+        <button class="back-button" (click)="volver()">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        
+        <button 
+          type="button" 
+          class="confirm-btn" 
+          (click)="confirmarSeleccion()"
+          [disabled]="!recursoSeleccionado"
+        >
+          CONFIRMAR SELECCIÓN
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

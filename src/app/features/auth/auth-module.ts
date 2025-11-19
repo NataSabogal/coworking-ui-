@@ -13,6 +13,7 @@ import { AccountComponent } from './pages/account/account.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { BillComponent } from './pages/bill/bill.component';
+import { ResourceComponent } from './pages/recurso/recurso.component';
 
 
 
@@ -28,6 +29,7 @@ import { BillComponent } from './pages/bill/bill.component';
     Home,
     PaymentsComponent,
     BillComponent,
+    ResourceComponent,
     
   ],
   imports: [
