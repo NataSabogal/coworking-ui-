@@ -11,6 +11,8 @@ import { Home } from './pages/home/home.component';
 import { MatIconModule } from '@angular/material/icon';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingComponent } from './pages/booking/booking.component';
+import { PaymentsComponent } from './pages/payments/payments.component';
+import { Bill } from './pages/bill/bill';
 
 
 
@@ -24,6 +26,8 @@ import { BookingComponent } from './pages/booking/booking.component';
     ForgotPassword,
     ResetPassword,
     Home,
+    PaymentsComponent,
+    Bill,
     
   ],
   imports: [

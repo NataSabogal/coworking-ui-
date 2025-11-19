@@ -92,6 +92,7 @@
 
 .button-section {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   padding-top: 2.5rem;
 }
@@ -113,6 +114,32 @@
 }
 
 .catalog-btn:hover {
+  background-color: #4da89d;
+  transform: translateY(-1px);
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.action-btn {
+  background-color: #5dbfb3;
+  color: #000;
+  border: none;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 85px;
+}
+
+.action-btn:hover {
   background-color: #4da89d;
   transform: translateY(-1px);
 }
@@ -180,10 +207,15 @@
 
   .button-section {
     padding-top: 0;
-    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .catalog-btn {
+    width: 100%;
+  }
+
+  .action-buttons {
     width: 100%;
   }
 

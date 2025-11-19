@@ -37,7 +37,7 @@ export class BookingComponent implements OnInit {
 
   pagoYFacturacion(): void {
     console.log('Navegando a pago y facturación');
-    this.router.navigate(['/pago-facturacion']);
+    this.router.navigate(['/payments']);
   }
 
   realizarReserva(): void {
@@ -53,5 +53,37 @@ export class BookingComponent implements OnInit {
 
   volverHome(): void {
     this.router.navigate(['/']);
+  }
+
+  agregar(): void {
+    if (this.bookingForm.valid) {
+      console.log('Agregando reserva:', this.bookingForm.value);
+      // Aquí conectarás con tu backend para crear la reserva
+      alert('Reserva agregada exitosamente');
+    } else {
+      this.bookingForm.markAllAsTouched();
+      alert('Por favor complete todos los campos');
+    }
+  }
+
+  buscar(): void {
+    console.log('Buscando reservas');
+    // Aquí conectarás con tu backend para buscar reservas
+    alert('Función de búsqueda - Conectar con backend');
+  }
+
+  editar(): void {
+    console.log('Editando reserva:', this.bookingForm.value);
+    // Aquí conectarás con tu backend para editar la reserva
+    alert('Función de editar - Conectar con backend');
+  }
+
+  eliminar(): void {
+    const confirmacion = confirm('¿Está seguro de eliminar esta reserva?');
+    if (confirmacion) {
+      console.log('Eliminando reserva');
+      // Aquí conectarás con tu backend para eliminar la reserva
+      alert('Reserva eliminada');
+    }
   }
 }

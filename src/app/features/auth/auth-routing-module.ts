@@ -7,6 +7,7 @@ import { ResetPassword } from './pages/reset-password/reset-password';
 import { RegistrarComponent } from './pages/register/register.component';
 import { AccountComponent } from './pages/account/account.component';
 import { BookingComponent } from './pages/booking/booking.component';
+import { PaymentsComponent } from './pages/payments/payments.component';
 
 const routes: Routes = [
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPassword },
   { path: 'reset-password', component: ResetPassword },
   {path: 'booking', component: BookingComponent},
+  { path: 'payments', component: PaymentsComponent },
 ];
 
 @NgModule({

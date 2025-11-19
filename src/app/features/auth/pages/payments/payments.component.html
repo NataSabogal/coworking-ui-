@@ -1,0 +1,52 @@
+<div class="payments-wrapper">
+  <div class="payments-container">
+    <h1 class="payments-title">PAGOS</h1>
+    <div class="payments-box">
+      <form [formGroup]="paymentsForm" class="payments-form">
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">ID RESERVA:</label>
+            <input formControlName="idReserva" class="field-input" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">MONTO :</label>
+            <input type="number" formControlName="monto" class="field-input" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">FECHA DE PAGO :</label>
+            <input type="date" formControlName="fechaPago" class="field-input" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="field">
+            <label class="field-label">METODO DE PAGO :</label>
+            <input formControlName="metodoPago" class="field-input" />
+          </div>
+        </div>
+      </form>
+
+      <!-- Bottom Section: Buttons -->
+      <div class="bottom-section">
+        <button class="back-button" (click)="volver()">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        
+        <div class="action-buttons">
+          <button type="button" class="action-btn pagar-btn" (click)="pagar()">
+            PAGAR
+          </button>
+          <button type="button" class="action-btn factura-btn" (click)="generarFactura()">
+            FACTURA
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
