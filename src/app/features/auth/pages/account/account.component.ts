@@ -46,7 +46,7 @@ export class AccountComponent implements OnInit {
 
   verHistorialReservas(): void {
     console.log('Navegando a historial de reservas');
-    this.router.navigate(['/historial-reservas']);
+    this.router.navigate(['/booking-history']);
   }
 
   verNotificaciones(): void {

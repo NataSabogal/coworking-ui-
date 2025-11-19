@@ -14,6 +14,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { BillComponent } from './pages/bill/bill.component';
 import { ResourceComponent } from './pages/recurso/recurso.component';
+import { BookingHistoryComponent } from './pages/booking-history/booking-history.component';
 
 
 
@@ -30,6 +31,7 @@ import { ResourceComponent } from './pages/recurso/recurso.component';
     PaymentsComponent,
     BillComponent,
     ResourceComponent,
+    BookingHistoryComponent,
     
   ],
   imports: [

@@ -10,6 +10,7 @@ import { BookingComponent } from './pages/booking/booking.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { BillComponent } from './pages/bill/bill.component';
 import { ResourceComponent } from './pages/recurso/recurso.component';
+import { BookingHistoryComponent } from './pages/booking-history/booking-history.component';
 
 const routes: Routes = [
 
@@ -19,11 +20,12 @@ const routes: Routes = [
   { path: 'account', component: AccountComponent },
   { path: 'forgot-password', component: ForgotPassword },
   { path: 'reset-password', component: ResetPassword },
-  {path: 'booking', component: BookingComponent},
+  { path: 'booking', component: BookingComponent },
   { path: 'payments', component: PaymentsComponent },
   { path: 'bill', component: BillComponent },
   { path: 'resource', component: ResourceComponent },
-  
+  { path: 'booking-history', component: BookingHistoryComponent },
+
 ];
 
 @NgModule({

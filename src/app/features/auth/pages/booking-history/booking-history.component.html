@@ -1,0 +1,125 @@
+<div class="history-wrapper">
+  <div class="history-container">
+    <h1 class="history-title">HISTORIAL DE RESERVAS</h1>
+    
+    <div class="history-box">
+      <!-- Filtro de rango de fechas -->
+      <div class="filter-section">
+        <div class="filter-row">
+          <div class="filter-group">
+            <label class="filter-label">FECHA INICIO:</label>
+            <input 
+              type="date" 
+              [(ngModel)]="fechaInicio" 
+              class="filter-input"
+            />
+          </div>
+          
+          <div class="filter-group">
+            <label class="filter-label">FECHA FIN:</label>
+            <input 
+              type="date" 
+              [(ngModel)]="fechaFin" 
+              class="filter-input"
+            />
+          </div>
+          
+          <button type="button" class="search-btn" (click)="buscarReservas()">
+            <mat-icon>search</mat-icon>
+            <span>BUSCAR</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Loading -->
+      <div *ngIf="loading" class="loading-section">
+        <mat-icon class="loading-icon">hourglass_empty</mat-icon>
+        <p>Cargando historial...</p>
+      </div>
+
+      <!-- Tabla de reservas -->
+      <div *ngIf="!loading && reservas.length > 0" class="table-container">
+        <div class="table-wrapper">
+          <table class="reservas-table">
+            <thead>
+              <tr>
+                <th>ID RESERVA</th>
+                <th>FECHA INICIO</th>
+                <th>HORA INICIO</th>
+                <th>FECHA FIN</th>
+                <th>HORA FIN</th>
+                <th>ESTADO</th>
+                <th>ID RECURSO</th>
+                <th>USUARIO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reserva of reservas" [class.confirmada]="reserva.estado === 'confirmada'">
+                <td data-label="ID RESERVA">{{ reserva.idReserva }}</td>
+                <td data-label="FECHA INICIO">{{ reserva.fechaInicio }}</td>
+                <td data-label="HORA INICIO">{{ reserva.horaInicio }}</td>
+                <td data-label="FECHA FIN">{{ reserva.fechaFin }}</td>
+                <td data-label="HORA FIN">{{ reserva.horaFin }}</td>
+                <td data-label="ESTADO">
+                  <span class="estado-badge" [attr.data-estado]="reserva.estado">
+                    {{ reserva.estado }}
+                  </span>
+                </td>
+                <td data-label="ID RECURSO">{{ reserva.idRecurso }}</td>
+                <td data-label="USUARIO">{{ reserva.usuarioReserva }}</td>
+                <td data-label="ACCIONES">
+                  <div class="action-buttons">
+                    <button 
+                      type="button" 
+                      class="action-icon-btn view-btn" 
+                      (click)="verDetalle(reserva)"
+                      title="Ver detalle"
+                    >
+                      <mat-icon>visibility</mat-icon>
+                    </button>
+                    <button 
+                      type="button" 
+                      class="action-icon-btn cancel-btn" 
+                      (click)="cancelarReserva(reserva)"
+                      [disabled]="reserva.estado !== 'confirmada'"
+                      title="Cancelar reserva"
+                    >
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Resumen -->
+        <div class="summary-section">
+          <p class="summary-text">
+            <strong>Total de reservas encontradas:</strong> {{ reservas.length }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Sin resultados -->
+      <div *ngIf="!loading && reservas.length === 0 && yaSeHizoBusqueda" class="no-data-section">
+        <mat-icon class="no-data-icon">event_busy</mat-icon>
+        <p>No se encontraron reservas en el rango de fechas seleccionado</p>
+      </div>
+
+      <!-- Sin búsqueda inicial -->
+      <div *ngIf="!loading && !yaSeHizoBusqueda" class="initial-section">
+        <mat-icon class="initial-icon">date_range</mat-icon>
+        <p>Seleccione un rango de fechas y presione "BUSCAR" para ver su historial de reservas</p>
+      </div>
+
+      <!-- Bottom button -->
+      <div class="bottom-section">
+        <button class="back-button" (click)="volver()">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
