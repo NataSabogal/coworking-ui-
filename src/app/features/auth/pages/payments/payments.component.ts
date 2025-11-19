@@ -41,11 +41,18 @@ export class PaymentsComponent implements OnInit {
   }
 
   generarFactura(): void {
-    console.log('Generando factura');
-    // Aquí navegarás al componente de factura que crearás después
-    this.router.navigate(['/factura']);
-    // O podrías generar un PDF, etc.
+  if (this.paymentsForm.valid) {
+    const fechaPago = this.paymentsForm.get('fechaPago')?.value;
+    console.log('Generando factura para fecha:', fechaPago);
+    // Navega pasando la fecha como parámetro
+    this.router.navigate(['/bill'], { 
+      queryParams: { fecha: fechaPago } 
+    });
+  } else {
+    this.paymentsForm.markAllAsTouched();
+    alert('Por favor complete la fecha de pago para generar la factura');
   }
+}
 
   volver(): void {
     this.router.navigate(['/booking']);

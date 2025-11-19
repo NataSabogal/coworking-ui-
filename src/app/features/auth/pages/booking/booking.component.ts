@@ -31,9 +31,9 @@ export class BookingComponent implements OnInit {
   }
 
   verCatalogoRecursos(): void {
-    console.log('Navegando a catálogo de recursos');
-    this.router.navigate(['/catalogo-recursos']);
-  }
+  console.log('Navegando a catálogo de recursos');
+  this.router.navigate(['/resource']);
+}
 
   pagoYFacturacion(): void {
     console.log('Navegando a pago y facturación');
